@@ -10,8 +10,13 @@
         "password": "031200"
     },
     {
-        "id": 2,
+        "id": 3,
         "username": "Rosa",
         "password": "1234"
+    },
+    {
+        "id": "4",
+        "username": "Bruno"
+        "password": "123"
     }
 ]
