@@ -1,0 +1,12 @@
+{% extends 'basehome.html' %}
+
+{% block title %}Solicitação Confirmada{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Solicitação Enviada</h1>
+    <p>Sua solicitação de agendamento foi enviada com sucesso. Aguarde a confirmação.</p>
+    <a href="{{ url_for('home') }}" class="btn btn-primary mt-3">Voltar para Home</a>
+    <a href="{{ url_for('agenda') }}" class="btn btn-secondary mt-3">Ver Agenda</a>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Menu</h1>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="{{ url_for('ver_agendamentos') }}">Ver Agendamentos</a></li>
+        <li class="list-group-item"><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
+        <li class="list-group-item"><a href="{{ url_for('agenda') }}">Agenda</a></li>
+        <li class="list-group-item"><a href="{{ url_for('register') }}">Registrar Usuário</a></li>
+        <li class="list-group-item"><a href="{{ url_for('usuarios') }}">Usuários Cadastrados</a></li>
+        <li class="list-group-item"><a href="{{ url_for('logout') }}">Sair</a></li>
+    </ul>
+</div>
+{% endblock %}

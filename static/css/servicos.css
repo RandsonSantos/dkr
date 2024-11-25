@@ -1,0 +1,45 @@
+/* Estilos para as Opções de Serviços */
+.servicos-container {
+    margin-top: 20px;
+}
+
+.servicos-container label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.servicos-container input[type="checkbox"] {
+    display: none;
+}
+
+.servicos-container input[type="checkbox"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+.servicos-container input[type="checkbox"]:checked + label::before {
+    background-color: #007bff;
+}
+
+.servicos-container input[type="checkbox"] + label::after {
+    content: '✔';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    font-size: 16px;
+    color: white;
+    display: none;
+}
+
+.servicos-container input[type="checkbox"]:checked + label::after {
+    display: block;
+}

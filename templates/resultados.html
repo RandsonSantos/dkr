@@ -1,0 +1,47 @@
+{% extends 'basehome.html' %}
+
+{% block title %}Resultados Filtrados{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center;">Resultados Filtrados</h1>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Placa</th>
+                <th>Tipo de Lavagem</th>
+                <th>Opções de Serviços</th>
+                <th>Data</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for agendamento in agendamentos_filtrados %}
+            <tr>
+                <td>{{ agendamento.id }}</td>
+                <td>{{ agendamento.nome }}</td>
+                <td>{{ agendamento.telefone }}</td>
+                <td>{{ agendamento.placa }}</td>
+                <td>{{ agendamento.tipo_lavagem }}</td>
+                <td>{{ agendamento.opcoes_servicos }}</td>
+                <td>{{ agendamento.data }}</td>
+                <td>{{ agendamento.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('relatorios') }}" class="btn btn-secondary mt-3">Voltar</a>
+    <form method="POST" action="{{ url_for('resultados_impressao') }}" style="display:inline;">
+        <input type="hidden" name="cliente" value="{{ request.form.cliente }}">
+        <input type="hidden" name="placa" value="{{ request.form.placa }}">
+        <input type="hidden" name="mes" value="{{ request.form.mes }}">
+        {% for status in request.form.getlist('status') %}
+        <input type="hidden" name="status" value="{{ status }}">
+        {% endfor %}
+        <button type="submit" class="btn btn-primary mt-3">Versão para Impressão</button>
+    </form>
+</div>
+{% endblock %}

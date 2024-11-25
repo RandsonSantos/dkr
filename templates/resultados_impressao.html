@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Resultados para Impressão{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center;">Resultados Filtrados</h1>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Placa</th>
+                <th>Tipo de Lavagem</th>
+                <th>Opções de Serviços</th>
+                <th>Data</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for agendamento in agendamentos_filtrados %}
+            <tr>
+                <td>{{ agendamento.id }}</td>
+                <td>{{ agendamento.nome }}</td>
+                <td>{{ agendamento.telefone }}</td>
+                <td>{{ agendamento.placa }}</td>
+                <td>{{ agendamento.tipo_lavagem }}</td>
+                <td>{{ agendamento.opcoes_servicos }}</td>
+                <td>{{ agendamento.data }}</td>
+                <td>{{ agendamento.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

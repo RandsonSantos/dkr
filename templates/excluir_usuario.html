@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Excluir Usuário{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Excluir Usuário</h1>
+    <p>Tem certeza de que deseja excluir o usuário <strong>{{ user.username }}</strong>?</p>
+    <form method="POST" action="{{ url_for('excluir_usuario', id=user.id) }}">
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="{{ url_for('usuarios') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

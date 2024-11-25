@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Ver Pedido{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <h1>Detalhes do Pedido</h1>
+    <div class="card mt-3">
+        <div class="card-header">
+            <h2 class="card-title">Pedido #{{ agendamento.id }}</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Nome:</strong> {{ agendamento.nome }}</p>
+            <p><strong>Telefone:</strong> {{ agendamento.telefone }}</p>
+            <p><strong>Placa:</strong> {{ agendamento.placa }}</p>
+            <p><strong>Tipo de Lavagem:</strong> {{ agendamento.tipo_lavagem }}</p>
+            <p><strong>Opções de Serviços:</strong> {{ agendamento.opcoes_servicos }}</p>
+            <p><strong>Data:</strong> {{ agendamento.data }}</p>
+            <p><strong>Status:</strong> 
+                <span class="badge 
+                    {% if agendamento.status == 'Aceito' %}badge-success
+                    {% elif agendamento.status == 'Cancelado' %}badge-danger
+                    {% else %}badge-warning
+                    {% endif %}">
+                    {{ agendamento.status }}
+                </span>
+            </p>
+        </div>
+        <div class="card-footer">
+            <form method="POST" action="{{ url_for('atualizar_status_agendamento', id=agendamento.id, status='Aceito') }}" style="display:inline;">
+                <button type="submit" class="btn btn-success">Aceitar</button>
+            </form>
+            <form method="POST" action="{{ url_for('atualizar_status_agendamento', id=agendamento.id, status='Cancelado') }}" style="display:inline;">
+                <button type="submit" class="btn btn-danger">Cancelar</button>
+            </form>
+            <a href="{{ url_for('editar_agendamento', id=agendamento.id) }}" class="btn btn-primary">Editar</a>
+            <a href="{{ url_for('ver_agendamentos') }}" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

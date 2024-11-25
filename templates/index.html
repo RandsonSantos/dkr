@@ -1,0 +1,49 @@
+{% extends 'basehome.html' %}
+
+{% block title %}Solicitação de Agendamento{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-3">Agendar</h1>
+    <form method="POST" action="{{ url_for('solicitar_agendamento') }}">
+        <div class="form-group mb-2">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control" required>
+        </div>
+        <div class="form-group mb-2">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" class="form-control" required>
+        </div>
+        <div class="form-group mb-2">
+            <label for="placa">Placa</label>
+            <input type="text" id="placa" name="placa" class="form-control" required>
+        </div>
+        <div class="form-group mb-2">
+            <label for="tipo_lavagem">Tipo de Lavagem</label>
+            <select id="tipo_lavagem" name="tipo_lavagem" class="form-control" required>
+                <option value="Completa">Completa</option>
+                <option value="Simples">Simples</option>
+                <option value="Enceramento">Enceramento</option>
+            </select>
+        </div>
+        <div class="form-group mb-2">
+            <label>Opções de Serviços</label>
+            <div>
+                <input type="checkbox" id="com_cera" name="opcoes_servicos" value="Com Cera">
+                <label for="com_cera">Com Cera</label>
+            </div>
+            <div>
+                <input type="checkbox" id="higienizacao_bancos" name="opcoes_servicos" value="Higienização de Bancos">
+                <label for="higienizacao_bancos">Higienização de Bancos</label>
+            </div>
+            <div>
+                <input type="checkbox" id="polimento" name="opcoes_servicos" value="Polimento">
+                <label for="polimento">Polimento</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Solicitar</button>
+    </form>
+    <a href="{{ url_for('agenda') }}" class="btn btn-secondary mt-3">Ver Agenda</a>
+</div>
+{% endblock %}
+

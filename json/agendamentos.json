@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nome": "Randson Santos",
+        "telefone": "6398474-0162",
+        "placa": "ABC-1234",
+        "tipo_lavagem": "Completa",
+        "opcoes_servicos": "Com Cera, Higieniza\u00e7\u00e3o de Bancos, Polimento",
+        "data": "2024-11-20 17:58:54",
+        "status": "Aceito"
+    },
+    {
+        "id": 2,
+        "nome": "Randson Sontos",
+        "telefone": "63984740162",
+        "placa": "ABC-1234",
+        "tipo_lavagem": "Simples",
+        "opcoes_servicos": "",
+        "data": "2024-11-20",
+        "status": "Aceito"
+    },
+    {
+        "id": 3,
+        "nome": "Randson Santos",
+        "telefone": "63984740162",
+        "placa": "ABC-1234",
+        "tipo_lavagem": "Completa",
+        "opcoes_servicos": "Com Cera",
+        "data": "2024-11-25 12:08:39",
+        "status": "Pendente"
+    }
+]
